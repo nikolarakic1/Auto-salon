@@ -1,0 +1,547 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+.zaglavlje {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a0a23;
+  padding: 20px;
+  color: white;
+  flex-wrap: wrap;
+  
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+    display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navigacija {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+ 
+}
+
+.navigacija a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navigacija a:hover,
+.navigacija .aktivno {
+  color: #ff9900;
+}
+
+.hero {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+
+.sekcija {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fff;
+}
+
+.sekcija h2 {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+}
+
+.kartice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.kartica {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  width: 280px;
+  transition: transform 0.3s;
+}
+
+.kartica:hover {
+  transform: translate(-5px);
+}
+
+.kartica h3 {
+  margin-bottom: 10px;
+  color: #0a0a23;
+}
+.dugme {
+  background-color: #ff9900;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.dugme:hover {
+  background-color: #c07300;
+}
+.podnozje {
+  background-color: #0a0a23;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10%;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  gap: 20px;
+}
+
+.kontakt-info p {
+  margin-bottom: 8px;
+}
+
+.mapa {
+  min-width: 200px;
+  max-width: 300px;
+  text-align: right;
+}
+
+.mapa-placeholder {
+  background-color: #222;
+  width: 100%;
+  height: 100px;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+/* Responsivno za manje ekrane */
+@media (max-width: 600px) {
+  .podnozje {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .mapa {
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .zaglavlje {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navigacija {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navigacija a {
+    padding: 10px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .kartica {
+    width: 100%;
+  }
+}
+.slike-sekcija {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  padding-bottom: 50px;
+}
+
+.slika-hover {
+  width: 600px;
+  height: auto;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.slika-hover:hover {
+  box-shadow: 0 0 20px 5px rgb(117, 112, 112);
+  transform: scale(1.05);
+}
+
+.padajuci-meni {
+  position: relative;
+  display: inline-block;
+}
+
+.dugme-meni {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.sadrzaj-meni {
+  display: none;
+  position: absolute;
+  background-color: #0a0a23;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+  flex-direction: column;
+}
+
+.sadrzaj-meni a {
+  color: white;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.sadrzaj-meni a:hover {
+  background-color: #333;
+}
+
+.padajuci-meni:hover .sadrzaj-meni {
+  display: flex;
+}
+.galerija-slajder {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.galerija-slajder h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.slajder {
+  position: relative;
+  max-width: 800px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #aaa;
+}
+
+.slajd {
+  display: none;
+  animation: pojaviSe 1s ease-in-out;
+}
+
+.slajd img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.aktivan {
+  display: block;
+}
+
+.strelica {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+}
+.strelica:hover{
+   background-color: rgba(0, 0, 0, 0.7);
+}
+.levo {
+  left: 10px;
+}
+
+.desno {
+  right: 10px;
+}
+
+@keyframes pojaviSe {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* Dugme za promenu teme */
+.preklop-teme {
+  text-align: right;
+  margin: 10px 20px 0 0;
+}
+
+#dugme-tema {
+  padding: 8px 16px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+#dugme-tema:hover {
+  background-color: #c07300;
+}
+
+/* Svetla tema */
+.svetla-tema {
+  background-color: #ffffff;
+  color: #111;
+}
+
+.svetla-tema .zaglavlje,
+.svetla-tema .podnozje,
+.svetla-tema .hero {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.svetla-tema .navigacija a {
+  color: #000;
+}
+
+.svetla-tema .navigacija a:hover,
+.svetla-tema .navigacija .aktivno {
+  color: #ff9900;
+}
+.onama-glavno {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.onama-glavno section {
+  margin-bottom: 40px;
+}
+
+.onama-glavno h1, .onama-glavno h2 {
+  color: #0a0a23;
+  margin-bottom: 15px;
+}
+
+.onama-glavno ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.slika-automobila {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.slika-automobila img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.slika-automobila img:hover {
+  transform: scale(1.03);
+}
+
+/* Hamburger dugme */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* Navigacija */
+.navigacija {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.meni a {
+  display: inline-block;
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Padajući meni */
+.padajuci-meni {
+  position: relative;
+  display: inline-block;
+}
+
+.sadrzaj-meni {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 120px;
+  z-index: 1;
+}
+
+.padajuci-meni:hover .sadrzaj-meni {
+  display: block;
+}
+
+.sadrzaj-meni a {
+  display: block;
+  padding: 10px;
+  color: white;
+}
+
+/*Hamburger meni*/
+@media screen and (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .meni {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #222;
+  }
+
+  .meni a {
+    margin: 10px 0;
+    padding: 10px;
+  }
+
+.meni.prikazi {
+  display: flex;
+  flex-direction: column;
+}
+  .padajuci-meni {
+    width: 100%;
+  }
+
+  .sadrzaj-meni {
+    position: static;
+  }
+}
+.proizvodi-sekcija {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.proizvodi-sekcija h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.automobili-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.auto-kartica {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auto-kartica:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+}
+
+.auto-kartica img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.auto-kartica h2 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #222;
+  text-shadow: 2px 1px rgb(168, 159, 159);
+}
+
+.auto-kartica p {
+  font-size: 1rem;
+  color: #555;
+  margin: 4px 0;
+}.kontrole-velicine-fonta {
+  margin: 10px 20px;
+  text-align: center;
+}
+
+.kontrole-velicine-fonta button {
+  font-size: 1.2rem;
+  padding: 6px 8px;
+  margin: 0px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff9900;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.kontrole-velicine-fonta button:hover {
+  background-color: #333;
+  color: white;
+}
+.logo_salona {
+  width: 50px;
+  height: auto;
+ margin-left: 10px;
+}
+
